@@ -23,16 +23,16 @@ def pizza(request, pizza_id):
 
     return render(request, 'MainApp/pizza.html', context)
 
-# def new_comment(request):
-#     if request.method != 'POST':
-#         form = CommentForm()
-#     else:
-#         form = CommentForm(data=request.POST)
+def new_comment(request):
+    if request.method != 'POST':
+        form = CommentForm()
+    else:
+        form = CommentForm(data=request.POST)
 
-#         if form.is_valid():
-#             new_comment = form.save()
+        if form.is_valid():
+            new_comment = form.save()
 
-#             return redirect('MainApp:comment')
-#     context = {'form':form}
-#     return render(request, 'MainApp/new_comment.html', context)
+            return redirect('MainApp:pizzas')
+    context = {'form':form}
+    return render(request, 'MainApp/new_comment.html', context)
 

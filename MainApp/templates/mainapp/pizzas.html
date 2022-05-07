@@ -11,7 +11,6 @@
     {% for p in pizzas %}
     <li>
         <a href="{% url 'MainApp:pizza' p.id%}">{{ p }}</a>
-       
     </li>
     {% empty %}
     <li>No pizzas have been added yet</li>
