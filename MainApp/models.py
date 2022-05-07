@@ -5,6 +5,7 @@ from django.utils.timezone import now
 # Create your models here.
 class Pizza(models.Model):
     pizza_name = models.CharField(max_length=50)
+    pizza_img_url = models.CharField(max_length=100)
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

@@ -3,6 +3,24 @@
 
 {% block content %}
 
-<p>Pizza</p>
+<p>{{pizza}}</p>
+<ul>
+    {% for t in toppings %}
+    <li>{{ t }}</li>
+    {% empty %}
+    <li>No toppings have been added yet</li>
+    {% endfor %}
+</ul>
+<img src= {{pizza.pizza_img_url}} style="width:200;height:200px;">
+<ul>
+    {% for c in comments %}
+    <li>
+        {{ c.commentor_name }}<br>
+        {{ c.comment_text }}
+    </li>
+    {% empty %}
+    <li>No comments have been added yet</li>
+    {% endfor %}
+</ul>
 
 {% endblock content %}
